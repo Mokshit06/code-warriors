@@ -37,7 +37,7 @@ export default function CourseVideo({ course, isSmall }) {
 
   return (
     <Box className={classes.boxLeft}>
-      {!isSmall && <Toolbar />}
+      {isSmall && <Toolbar />}
       <video controls className={classes.video}>
         <source src={course.videoUrl} type='video/mp4' />
       </video>

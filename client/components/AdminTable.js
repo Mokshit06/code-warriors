@@ -47,7 +47,7 @@ export default function AdminTable({ teachers = false }) {
 
   const classes = useStyles();
   const { data, error, mutate } = useUsers();
-  useDebugValue(data);
+  if (!data) return 'Loading...';
 
   async function setTeacher(user) {
     mutate(
@@ -76,8 +76,6 @@ export default function AdminTable({ teachers = false }) {
     const message = user.isTeacher ? 'removed from' : 'made a';
     openNotification(`${user.displayName} has been ${message} teacher`);
   }
-
-  if (!data) return 'Loading...';
 
   const usersArr = data.filter(user => user.isTeacher === teachers);
 

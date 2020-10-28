@@ -46,14 +46,15 @@ router.get('/success', (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-  req.session.destroy(err => {
-    res.clearCookie('connect.sid');
-    if (err) {
-      res.status(500).send('Error');
-    } else {
-      res.send('Logged out');
-    }
-  });
+  // req.session.destroy(err => {
+  req.logout();
+  // if (err) {
+  // res.clearCookie('connect.sid');
+  // res.status(500).send('Error');
+  // } else {
+  res.send('Logged out');
+  // }
+  // });
 });
 
 module.exports = router;

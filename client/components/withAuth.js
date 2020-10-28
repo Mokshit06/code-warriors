@@ -17,7 +17,7 @@ const withAuth = (Component, admin = false) => props => {
         router.replace('/');
       }
     } else {
-      if (!error && user.isAdmin) {
+      if (!error && user?.isAdmin) {
         router.push(router.asPath);
       } else {
         router.replace('/');

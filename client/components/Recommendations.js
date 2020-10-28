@@ -27,7 +27,11 @@ export default function Recommendations({ courses, isSmall }) {
 
   return (
     <Box className={classes.boxRight}>
-      {isSmall ? <Divider /> : <Toolbar />}
+      {isSmall && (
+        <>
+          <Divider /> <Toolbar />
+        </>
+      )}
       <Typography variant='h5' component='p' className={classes.recommended}>
         Recommended
       </Typography>
