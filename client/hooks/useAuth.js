@@ -19,7 +19,7 @@ export default function useAuth() {
 
   const login = () => {
     if (typeof window !== 'undefined') {
-      const consentURL = `${process.env.NEXT_PUBLIC_API_URL}/auth/login`;
+      const consentURL = `${process.env.NEXT_PUBLIC_API_URL || ''}/auth/login`;
 
       window.open(consentURL, '__blank', 'width=500&height=800');
       window.addEventListener('message', event => {
