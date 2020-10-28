@@ -9,7 +9,7 @@ module.exports = {
 
   checkGuest: (req, res, next) => {
     if (req.isAuthenticated()) {
-      return res.redirect('/dashboard');
+      res.redirect('/auth/success');
     }
 
     next();

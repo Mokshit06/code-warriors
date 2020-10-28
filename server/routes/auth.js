@@ -22,7 +22,7 @@ router.get(
   }
 );
 
-router.get('/success', checkAuth, (req, res) => {
+router.get('/success', (req, res) => {
   res.send(`
   <!DOCTYPE html>
   <html lang="en">
