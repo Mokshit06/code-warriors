@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm i --prefix ./client && npm run build --prefix client && rm -rf ./server/public && mv ./client/out ./server/public",
+    "dev:build": "npm run build --prefix client && rm -rf ./server/public && mv ./client/out ./server/public",
     "dev:client": "npm run dev --prefix client",
     "dev:server": "cross-env NODE_ENV=development nodemon server/index",
     "develop": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
